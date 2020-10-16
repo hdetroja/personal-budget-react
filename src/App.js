@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
-import {
+import{
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 import Menu from './Menu/Menu';
@@ -12,30 +12,28 @@ import Hero from './Hero/Hero';
 import HomePage from './HomePage/HomePage';
 import Footer from './Footer/Footer';
 import AboutPage from './AboutPage/AboutPage';
-import LoginPage from './LoginPage/LoginPage';
+import Login from './LoginPage/LoginPage';
 
-function App() {
+export default function App()  {
   return (
-    <Router>      
+    <Router>
       <Menu/>
       <Hero/>
-      <div className="mainContainer">
+      <div className = "mainContainer">
         <Switch>
-          
-          <Route path="/about">
+          <Route path ="/about">
             <AboutPage/>
           </Route>
-          <Route path="/login">
-            <LoginPage/>
+          <Route path ="/login">
+            <Login/>
           </Route>
-          <Route path="/">
-            <HomePage/> 
+          <Route path ="/">
+            <HomePage/>
           </Route>
         </Switch>
       </div>
       <Footer/>
     </Router>
   );
-}
 
-export default App;
+}
